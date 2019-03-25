@@ -1,0 +1,34 @@
+spring boot:
+
+"习惯优于配置"：项目中存在大量的配置，此外还内置了一个习惯性的配置，让你无需进行手动配置
+
+====================
+1、核心功能
+
+独立运行的spring项目：运行spring boot项目，只需 java -jar **.jar
+
+内嵌servlet容器：无需以war包的形式部署项目
+
+提供starter简化maven配置
+
+自动配置spring
+
+准生产的应用监控：提供基于http ssh telnet对运行时的项目进行监控
+
+
+======================
+2、基础配置
+
+**** @SpringBootApplication ***
+spring boot的核心注解，是一个组合注解 组合了：
+    @Configuration
+    @EnableAutoConfiguration：让spring boot根据类路径中的jar包依赖为当前项目进行自动配置
+    @ComponentScan
+
+**** 关闭特定的自动注解 ***
+    @SpringBootApplication(exclude={##.class})
+
+*** spring boot 配置文件 ***
+    spring boot使用一个全局配置文件 application.properties/application.yml
+    全局配置文件的作用：对一些默认配置的配置值进行修改
+
