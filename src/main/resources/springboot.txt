@@ -23,7 +23,8 @@ spring boot:
 spring boot的核心注解，是一个组合注解 组合了：
     @Configuration
     @EnableAutoConfiguration：让spring boot根据类路径中的jar包依赖为当前项目进行自动配置
-    @ComponentScan
+    @ComponentScan：spring boot会自动扫描@SpringBootApplication 所在类的同级包以及下级包里面的bean
+
 
 **** 关闭特定的自动注解 ***
     @SpringBootApplication(exclude={##.class})
@@ -80,3 +81,18 @@ spring boot的核心注解，是一个组合注解 组合了：
 
 **** 运作原理 ***
     @SpringBootApplication ---> @EnableAutoConfiguration --->@Import --->EnableAutoConfigurationImportSelector --> 扫描spring.factories文件
+
+**** 核心注解 ***
+    @ConditionalOnClass：当类路径下有指定的类的条件下
+    @ConditionalOnProperty：指定属性是否有指定的值
+    @CondetionalOnWebApplication：当前项目是web项目的条件下
+
+    这些注解都是组合了@Conditional元注解
+
+**** @EnableConfigurationProperties ***
+    开启属性注入，通过@EnableConfigurationProperties 声明，使用@Autowired注入
+
+==========================================================================================================================
+7、web开发
+
+
